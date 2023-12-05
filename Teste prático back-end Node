@@ -1,0 +1,46 @@
+Teste prático back-end Node
+
+DESENVOLVER UMA API PARA GERENCIAMENTO DE UM CAMPEONATO DE FUTSAL
+
+REQUISITOS DA API
+
+<!-- 1 - Cadastrar, editar e listar os jogadores
+
+    Nome
+    Número da camiseta -->
+
+<!-- 2 - Cadastrar, editar e listar os times
+
+    Nome do time
+    Adicionar ou excluir jogadores do time -->
+
+<!-- 3 - Cadastrar e editar as partidas
+
+    Data
+    Horário início
+    Horário término
+    Times
+    Placar -->
+
+<!-- 3 - Listar a classificação dos times no campeonato
+
+    Time
+    Pontos
+    Quantidade de gols -->
+
+4 - Autenticação na API
+
+FERRAMENTAS QUE DEVERÃO SER UTILIZADAS
+
+- Node
+- Express
+- MYSQL
+
+OUTRAS REGRAS
+
+- Deverá seguir boas práticas do RestFul em seus retornos.
+- Deverá utilizar alguma ferramenta de teste de requisições (Postman, Insomnia).
+
+ENTREGAR 
+Link do projeto no GitHub, com Readme bem estruturado, contendo as rotas de teste da ferramenta de teste de requisições utilizada
+

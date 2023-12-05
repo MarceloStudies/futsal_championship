@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: futsal_championship
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: admin
+    volumes:
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+
+  nodejs-app:
+    image: node:latest
+    working_dir: /src
+    volumes:
+      - ./src:/src
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    command: sh -c "npm install && node index.js"
