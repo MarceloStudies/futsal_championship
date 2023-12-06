@@ -11,6 +11,7 @@ router.post('/players',authenticateToken, (req, res) => {
   playerController.addPlayer(req, res);
 });
 
+
 // READ - Obter todos os jogadores
 router.get('/players', (req, res) => {
   playerController.getAllPlayers(req, res);
@@ -29,6 +30,11 @@ router.put('/players/:id',authenticateToken, (req, res) => {
 // DELETE - Excluir um jogador
 router.delete('/players/:id',authenticateToken, (req, res) => {
   playerController.deletePlayer(req, res);
+});
+
+// DELETE - Excluir  jogadores de um time
+router.delete('/players/team/:id',authenticateToken, (req, res) => {
+  playerController.deleteTeam(req, res);
 });
 
 module.exports = router;

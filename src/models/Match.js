@@ -5,8 +5,8 @@ class Match {
     this.date = date;
     this.startTime = startTime;
     this.endTime = endTime;
-    this.team1 = team1;
-    this.team2 = team2;
+    this.team1 = team1_id;
+    this.team2 = team2_id;
     this.score1 = score1;
     this.score2 = score2;
   }
@@ -46,7 +46,7 @@ class Match {
     database.query(query, [matchId], callback);
   }
 
-  static upateMatch(
+  static updateMatch(
     matchId,
     date,
     startTime,
@@ -75,24 +75,24 @@ class Match {
       values.push(endTime);
     }
 
-    if (team1) {
+    if (team1_id) {
       query += "team1_id = ?, ";
-      values.push(teams);
+      values.push(team1_id);
     }
 
-    if (team2) {
+    if (team2_id) {
       query += "team2_id = ?, ";
-      values.push(teams);
+      values.push(team2_id);
     }
 
     if (score1) {
       query += "score1 = ?, ";
-      values.push(score);
+      values.push(score1);
     }
 
     if (score2) {
       query += "score2 = ?, ";
-      values.push(score);
+      values.push(score1);
     }
 
     // remove a ultima virgula e o ultimo espaço

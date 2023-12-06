@@ -2,14 +2,14 @@ const Match = require("../models/Match");
 
 class MatchController {
   addMatch(req, res) {
-    const { date, startTime, endTime, team1, team2, score1, score2 } = req.body;
+    const { date, startTime, endTime, team1_id, team2_id, score1, score2 } = req.body;
 
     Match.createMatch(
       date,
       startTime,
       endTime,
-      team1,
-      team2,
+      team1_id,
+      team2_id,
       score1,
       score2,
       (error, results) => {
@@ -58,15 +58,15 @@ class MatchController {
 
   updateMatch(req, res) {
     const matchId = req.params.id;
-    const { date, startTime, endTime, team1, team2, score1, score2 } = req.body;
+    const { date, startTime, endTime, team1_id, team2_id, score1, score2 } = req.body;
 
     Match.updateMatch(
       matchId,
       date,
       startTime,
       endTime,
-      team1,
-      team2,
+      team1_id,
+      team2_id,
       score1,
       score2,
       (error) => {

@@ -9,7 +9,7 @@ services:
       MYSQL_USER: dev
       MYSQL_PASSWORD: admin
     volumes:
-      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+      - ./datbaase.sql:/docker-entrypoint-initdb.d/database.sql
 
   nodejs-app:
     image: node:latest

@@ -16,7 +16,7 @@ class Player {
   }
 
   static getAllPlayers(callback) {
-    const query = 'SELECT P.name, P.shirt_number, T.name FROM players P INNER JOIN teams T ON P.team_id = T.id ';
+    const query = 'SELECT P.name, P.shirt_number, T.name as team FROM players P INNER JOIN teams T ON P.team_id = T.id ';
     database.query(query, callback);
   }
 
@@ -56,6 +56,11 @@ class Player {
   static deletePlayer(playerId, callback) {
     const query = 'DELETE FROM players WHERE id = ?';
     database.query(query, [playerId], callback);
+  }
+
+  static deleteTeam(teamId, callback) {
+    const query = 'DELETE FROM players WHERE team_id = ?';
+    database.query(query, [teamId], callback);
   }
 }
 

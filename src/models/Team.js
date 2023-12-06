@@ -25,12 +25,12 @@ class Team {
 
   static updateTeam(teamId, name, callback) {
     const query = 'UPDATE teams SET name = ? WHERE id = ?';
-    const values = [name,playerId];
+    const values = [name,teamId];
 
     database.query(query, values, callback);
   }
 
-  static deletePlayer(teamId, callback) {
+  static deleteTeam(teamId, callback) {
     const query = 'DELETE FROM teams WHERE id = ?';
     database.query(query, [teamId], callback);
   }

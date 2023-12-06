@@ -6,7 +6,7 @@ const saltRounds = 10;
 
 const router = express.Router();
 
-router.post('/register', async (req, res) => {
+router.post('/users/register', async (req, res) => {
   try {
 
     const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
 });
 
 
-router.post('/login', async (req, res) => {
+router.post('/users/login', async (req, res) => {
   userController.getLoginUser(req, res, async (error, user) => {
     if (error) {
       console.error('Error getting login user:', error);

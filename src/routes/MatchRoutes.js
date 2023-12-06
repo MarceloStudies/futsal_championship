@@ -30,4 +30,9 @@ router.delete('/matches/:id',authenticateToken ,(req, res) => {
   matchController.deleteMatch(req, res);
 });
 
+router.get('/classifications', (req, res) => {
+  matchController.getClassification(req, res);
+});
+
+
 module.exports = router;

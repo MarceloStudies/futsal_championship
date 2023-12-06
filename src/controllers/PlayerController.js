@@ -69,6 +69,19 @@ class PlayerController {
       }
     });
   }
+
+  deleteTeam(req, res) {
+    const teamId = req.params.id;
+
+    Player.deleteTeam(teamId, (error) => {
+      if (error) {
+        console.error('Erro ao excluir jogador:', error);
+        res.status(500).json({ error: 'Erro interno do servidor' });
+      } else {
+        res.status(200).json({ message: 'Jogadores excluídos com sucesso' });
+      }
+    });
+  }
 }
 
 module.exports = new PlayerController();
